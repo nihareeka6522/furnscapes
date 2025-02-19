@@ -1,0 +1,36 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, main, footer {
+    padding: 20px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    section {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    section h2 {
+        font-size: 18px;
+    }
+
+    p, li {
+        font-size: 14px;
+    }
+}
