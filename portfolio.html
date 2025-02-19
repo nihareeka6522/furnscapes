@@ -27,34 +27,48 @@
             }
         }
     </style>
+    <script>
+        // Add active class to current page link
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'home.html';
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </head>
-
 <body>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section id="home">
-        <h1>Welcome to My Architectural Portfolio</h1>
-        <p>Explore my work and services in architecture and design.</p>
-    </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a passionate architect with a focus on sustainable and innovative designs.</p>
-    </section>
-
-    <section id="services">
-        <h2>Services</h2>
-        <p>I offer a range of architectural services including design, planning, and consultation.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Get in touch to discuss your next architectural project.</p>
-    </section>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Our Portfolio</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Featured Projects</h2>
+            <ul>
+                <li>Modern Office Spaces</li>
+                <li>Residential Complexes</li>
+                <li>Commercial Interiors</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Client Testimonials</h2>
+            <p>"Furnscapes transformed our office into a modern, functional space."</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Furnscapes. All rights reserved.</p>
+    </footer>
 </body>
 </html>

@@ -4,14 +4,66 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-image: url('https://source.unsplash.com/1600x900/?architecture,modern');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
+/* Navigation styles */
+nav {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background: #f0f0f0;
+    color: #000;
+}
+
+nav a.active {
+    background: #333;
+    color: white;
+}
+
 
 header, main, footer {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 
 /* Responsive layout */
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
     header h1 {
         font-size: 24px;
     }
@@ -21,7 +73,17 @@ header, main, footer {
     }
 }
 
+
 @media (max-width: 480px) {
+    nav {
+        padding: 0.5rem;
+    }
+    
+    nav a {
+        padding: 0.3rem 0.6rem;
+        font-size: 14px;
+    }
+    
     header h1 {
         font-size: 20px;
     }
