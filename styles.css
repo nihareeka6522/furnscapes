@@ -4,11 +4,34 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-image: url('https://source.unsplash.com/1600x900/?architecture,modern');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    animation: changeBackground 30s infinite;
+    color: #FFE5B4; /* Peach color */
+    position: relative;
+}
+
+/* Background overlay */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+    z-index: -1;
+}
+
+@keyframes changeBackground {
+    0% { background-image: url('images/unique1.jpg'); }
+    20% { background-image: url('images/unique2.jpg'); }
+    40% { background-image: url('images/unique3.jpg'); }
+    60% { background-image: url('images/unique4.jpg'); }
+    80% { background-image: url('images/unique5.jpg'); }
+    100% { background-image: url('images/unique1.jpg'); }
 }
 
 /* Navigation styles */
@@ -16,6 +39,8 @@ nav {
     background: rgba(255, 255, 255, 0.9);
     padding: 1rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;
 }
 
 nav ul {
@@ -49,13 +74,15 @@ nav a.active {
     color: white;
 }
 
-
 header, main, footer {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    text-align: left;
+    padding-left: 40px;
+    position: relative;
+    z-index: 1;
 }
-
 
 /* Responsive layout */
 @media (max-width: 768px) {
@@ -71,8 +98,12 @@ header, main, footer {
     section {
         margin-bottom: 20px;
     }
-}
 
+    header, main, footer {
+        text-align: left;
+        padding-left: 20px;
+    }
+}
 
 @media (max-width: 480px) {
     nav {
@@ -94,5 +125,10 @@ header, main, footer {
 
     p, li {
         font-size: 14px;
+    }
+
+    header, main, footer {
+        text-align: left;
+        padding-left: 10px;
     }
 }
